@@ -12,5 +12,5 @@ type User struct {
 	UpdatedAt time.Time      `json:"updated_at"`
 	DeletedAt gorm.DeletedAt `gorm:"index" json:"deleted_at"`
 	Name      string         `json:"name" validate:"required"`
-	Email     string         `json:"email" validate:"required,email"`
+	Email     string         `json:"email" gorm:"unique" validate:"required,email"`
 }
