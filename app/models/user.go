@@ -13,4 +13,10 @@ type User struct {
 	DeletedAt gorm.DeletedAt `gorm:"index" json:"deleted_at"`
 	Name      string         `json:"name" validate:"required"`
 	Email     string         `json:"email" gorm:"unique" validate:"required,email"`
+	Password  string         `json:"password" validate:"required"`
+}
+
+type UserSignInModel struct {
+	Email    string `json:"email" gorm:"unique" validate:"required,email"`
+	Password string `json:"password" validate:"required"`
 }
