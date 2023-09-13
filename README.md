@@ -44,10 +44,6 @@ successful-response:
 ```
 request:
     - method: GET
-    - body: {
-        "email": "example@gmail.com",
-        "password": "example123"
-      }
     - header: {
         "Authorization": "Bearer access-token-string"
     }
