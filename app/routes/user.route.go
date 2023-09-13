@@ -9,7 +9,6 @@ func UserRoute(app *gin.Engine) {
 	api := app.Group("/api")
 	user := api.Group("/user")
 
-	user.GET("/", controller.GetAllUsers)
 	user.POST("/register", controller.UserRegister)
 	user.POST("/signin", controller.UserSignIn)
 }

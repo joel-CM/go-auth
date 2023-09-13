@@ -13,12 +13,6 @@ import (
 	"gorm.io/gorm"
 )
 
-func GetAllUsers(c *gin.Context) {
-	users := []models.User{}
-	db.GormDB.Find(&users)
-	c.IndentedJSON(200, users)
-}
-
 func UserRegister(c *gin.Context) {
 	user := models.User{}
 	validate := validator.New()
