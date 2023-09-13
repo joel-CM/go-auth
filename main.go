@@ -19,14 +19,15 @@ func init() {
 func main() {
 	app := gin.Default()
 
-	// db connect
+	// db connection
 	db.DBConnect()
 
-	// migrations
+	// model migrations
 	db.GormDB.AutoMigrate(&models.User{})
 
-	// routes
+	// all routes
 	routes.Index(app)
 
-	app.Run(":3001") // listen and serve on 0.0.0.0:8080
+	// listen and serve on 0.0.0.0:3001
+	app.Run(":3001")
 }
